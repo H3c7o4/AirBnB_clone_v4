@@ -7,8 +7,15 @@ from models.amenity import Amenity
 from models.place import Place
 from os import environ
 from flask import Flask, render_template
+<<<<<<< HEAD
 import uuid
 app = Flask(__name__)
+=======
+from uuid import uuid4
+from flasgger import Swagger
+app = Flask(__name__)
+swagger = Swagger(app)
+>>>>>>> web_dynamic
 # app.jinja_env.trim_blocks = True
 # app.jinja_env.lstrip_blocks = True
 
@@ -39,9 +46,17 @@ def hbnb():
                            states=st_ct,
                            amenities=amenities,
                            places=places,
+<<<<<<< HEAD
                            cache_id=uuid.uuid4())
+=======
+                           cache_id=str(uuid4()))
+>>>>>>> web_dynamic
 
 
 if __name__ == "__main__":
     """ Main Function """
+<<<<<<< HEAD
     app.run(host='0.0.0.0', port=5001)
+=======
+    app.run(host='0.0.0.0', port=5000)
+>>>>>>> web_dynamic
